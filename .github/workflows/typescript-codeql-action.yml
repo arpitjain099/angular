@@ -16,7 +16,7 @@ on:
 
 jobs:
   analyze:
-    name: "Local CodeQL Analysis"
+    name: "Typescript - Local CodeQL Analysis"
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -61,7 +61,7 @@ jobs:
             const sarifData = JSON.parse(fs.readFileSync('results.sarif', 'utf8'));
             const results = (sarifData.runs && sarifData.runs[0].results) || [];
             
-            let summary = "### CodeQL Scan Results Summary\n\n";
+            let summary = "### CodeQL Scan Results Summary for Typescript\n\n";
             if(results.length === 0) {
               summary += "No issues found.";
             } else {
